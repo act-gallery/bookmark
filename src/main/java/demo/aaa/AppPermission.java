@@ -22,7 +22,7 @@ import java.util.Set;
 
 @Entity(name = "perm")
 @NotFixture
-public class AppPermission implements SimpleBean, Permission {
+public class AppPermission extends SimplePermission implements SimpleBean {
 
     // static permissions
     public static final String PERM_CREATE_BOOKMARK = "create-bookmark";
@@ -75,68 +75,28 @@ public class AppPermission implements SimpleBean, Permission {
     @GeneratedValue(strategy = GenerationType.TABLE)
     public Integer id;
 
-    public boolean dynamic;
-
-    public String name;
-
-    @Transient
-    private transient Map<String, String> properties;
-
     public AppPermission(String name, boolean dynamic) {
-        this.name = S.requireNotBlank(name).trim();
-        this.dynamic = dynamic;
-    }
-
-    @Override
-    public boolean isDynamic() {
-        return dynamic;
-    }
-
-    @Override
-    public Set<Permission> implied() {
-        return C.Set();
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return getName();
-    }
-
-    @Override
-    public void setProperty(String key, String value) {
-        properties().put(key, value);
-    }
-
-    @Override
-    public void unsetProperty(String key) {
-        properties().remove(key);
-    }
-
-    @Override
-    public String getProperty(String key) {
-        return properties().get(key);
-    }
-
-    @Override
-    public Set<String> propertyKeys() {
-        return properties().keySet();
-    }
-
-    private Map<String, String> properties() {
-        if (null == properties) {
-            properties = new HashMap<>();
-        }
-        return properties;
+        super(name, dynamic);
     }
 
     public static class Dao extends JPADao<Integer, AppPermission> {
         public AppPermission findByName(String name) {
             return findOneBy("name", name);
+        }
+
+        @Override
+        public AppPermission save(AppPermission entity) {
+            return super.save(entity);
+        }
+
+        @Override
+        public void save(AppPermission entity, String fieldList, Object... values) {
+            super.save(entity, fieldList, values);
+        }
+
+        @Override
+        public List<AppPermission> save(Iterable<AppPermission> entities) {
+            return super.save(entities);
         }
     }
 

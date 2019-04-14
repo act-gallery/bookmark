@@ -1,4 +1,4 @@
-Scenario(3 Add bookmark for user B):
+Scenario(Prepare! Add bookmark for user B):
   depends:
     - Login B
   description: Prepare testing data - bookmark for user B

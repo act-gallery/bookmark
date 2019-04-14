@@ -1,6 +1,8 @@
 package demo.models;
 
 import act.aaa.model.UserLinked;
+import act.apidoc.SampleData;
+import act.apidoc.SampleDataCategory;
 import act.db.jpa.JPADao;
 import org.osgl.aaa.Principal;
 import org.osgl.util.S;
@@ -10,6 +12,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+
+import static act.apidoc.SampleDataCategory.EMAIL;
 
 @Entity(name = "bookmark")
 public class Bookmark implements UserLinked {
@@ -27,6 +31,7 @@ public class Bookmark implements UserLinked {
     /**
      * The email of the user who created this bookmark
      */
+    @SampleData.Category(EMAIL)
     public String owner;
 
     @Override

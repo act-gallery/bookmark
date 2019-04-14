@@ -1,0 +1,19 @@
+Scenario(8 Access my profile):
+  depends:
+    - Login
+  description: As a registered user I want to be able to access my profile
+  urlContext: profiles
+  interactions:
+    - description: It shall respond with current login user profile when request to the endpoint
+      request:
+        get: me
+      response:
+        json:
+          email: a@demo.com
+          roles:
+            size:
+              - gt: 0
+            ?:
+              name: user
+          password:
+            - exists: false

@@ -59,6 +59,8 @@ public class LoginService extends PublicServiceBase {
      * * If user provided email or password is not correct, 401 Unauthorized shall be
      *   respond with message says "Unknown email/password"
      *
+     * Refer: [github issue](https://github.com/act-gallery/bookmark/issues/2)
+     *
      * @param email
      *      the email of the user
      * @param password
