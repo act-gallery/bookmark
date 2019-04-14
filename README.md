@@ -130,6 +130,5 @@ public class Bookmark implements UserLinked {
         return S.eq(principal.getName(), owner);
     }
     ...
-```
-
+}
 ```
