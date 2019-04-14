@@ -1,0 +1,16 @@
+Scenario(7 Delete specific bookmark - failure):
+  depends:
+    - View bookmark
+  urlContext: bookmarks
+  interactions:
+    - description: It shall respond 404 if no bookmark found by the ID specified
+      request:
+        delete: ${randInt()}
+      response:
+        status: 404
+    - description: It shall respond 403 if the bookmark specified by ID is created by a different user
+      request:
+        delete: ${bookmarkFacebookId}
+      response:
+        status: 403
+

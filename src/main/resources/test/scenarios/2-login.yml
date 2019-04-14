@@ -1,0 +1,11 @@
+Scenario(2 Login):
+  depends:
+    - Add bookmark for user B
+  description: As a registered user I want to be able to login the system
+  interactions:
+    - description: User shall be able to login the system using the correct email and password
+      request:
+        post: login
+        json:
+          email: a@demo.com
+          password: password

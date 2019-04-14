@@ -1,0 +1,13 @@
+Scenario(5 Update bookmark):
+  depends:
+    - Add bookmark
+  description: As a registered user I want to be able to update my bookmark description
+  urlContext: bookmarks
+  interactions:
+    - description: It shall return 204 after successfully updated the bookmark description
+      request:
+        put: ${newBookmarkId}
+        json:
+          description: The entry of the net
+      response:
+        status: 204

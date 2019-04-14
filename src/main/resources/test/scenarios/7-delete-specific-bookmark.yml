@@ -1,0 +1,17 @@
+Scenario(7 Delete specific bookmark):
+  depends:
+    - View bookmark
+  description: As a registered user I want to be able to delete my bookmark by ID
+  urlContext: bookmarks
+  interactions:
+    - description: Logged in user shall be able to view my bookmark by ID
+      request:
+        delete: ${newBookmarkId}
+      response:
+        status: 204
+    - description: Once a bookmark has been deleted it cannot be viewed
+      request:
+        get: ${newBookmarkId}
+      response:
+        status: 404
+

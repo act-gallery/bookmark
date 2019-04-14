@@ -1,0 +1,13 @@
+Scenario(5 Update bookmark - unauthorized):
+  partition: non-authenticated
+  depends:
+    - Add bookmark
+  urlContext: bookmarks
+  interactions:
+    - description: It shall respond 401 if a guest user (user that not logged in) submit request to update bookmarks
+      request:
+        put: ${newBookmarkId}
+        json:
+          description: The entry of the net
+      response:
+        status: 401

@@ -1,0 +1,8 @@
+User(a):
+  email: a@demo.com
+  password: password
+  roles: user
+User(b):
+  email: b@demo.com
+  password: password
+  roles: user

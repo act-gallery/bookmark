@@ -1,0 +1,10 @@
+Scenario(6 View bookmark - exceptional cases):
+  depends:
+    - Update bookmark
+  urlContext: bookmarks
+  interactions:
+    - description: It shall respond 404 if the bookmark cannot be found by ID
+      request:
+        get: ${randomInt()}
+      response:
+        status: 404

@@ -1,0 +1,15 @@
+Scenario(6 View bookmark):
+  depends:
+    - Update bookmark
+  description: As a registered user I want to be able to view specific bookmark by ID
+  urlContext: bookmarks
+  interactions:
+    - description: Logged in user shall be able to view my bookmark by ID
+      request:
+        get: ${newBookmarkId}
+      response:
+        json:
+          url: https://google.com
+          description: The entry of the net
+          owner:
+            - exists: false

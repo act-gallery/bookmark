@@ -1,0 +1,17 @@
+Scenario(4 List my bookmarks):
+  depends:
+    - Add bookmark
+  description: As a registered user I want to be able to list all bookmarks created by me
+  urlContext: bookmarks
+  interactions:
+    - description: It shall returns all bookmarks created by current logged in user
+      request:
+        method: get
+      response:
+        json:
+          size: 1
+          0:
+            url: https://google.com
+            description: The gate of the net
+            id:
+              - exists: true

@@ -1,0 +1,28 @@
+Scenario(3 Add bookmark for user B):
+  depends:
+    - Login B
+  description: Prepare testing data - bookmark for user B
+  urlContext: bookmarks
+  interactions:
+    - description: Add facebook
+      request:
+        method: post
+        json:
+          url: https://facebook.com
+          description: The gate of the social net
+      response:
+        json:
+          id:
+            - exists: true
+      cache:
+        bookmarkFacebookId: id
+    - description: Add webo
+      request:
+        method: post
+        json:
+          url: https://webo.sina.com
+          description: The gate of the CN net
+      response:
+        json:
+          id:
+            - exists: true

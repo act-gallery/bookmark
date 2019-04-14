@@ -1,0 +1,24 @@
+Scenario(2 Login failure):
+  partition: non-authenticated
+  description: "The exceptional cases for #2 Login User scenario"
+  interactions:
+    - description: If user provided wrong email, 400 bad request shall be responded with message says 'Unknown email/password'
+      request:
+        post: login
+        json:
+          email: nobody@demo.com
+          password: ${randString()}
+      response:
+        status: 400
+        json:
+          message: Unknown email/password
+    - description: If user provided right email and wrong password, 400 bad request shall be responded with message says 'Unknown email/password'
+      request:
+        post: login
+        json:
+          email: test@demo.com
+          password: ${randString()}
+      response:
+        status: 400
+        json:
+          message: Unknown email/password

@@ -1,0 +1,39 @@
+Scenario(1 Sign up):
+  partition: non-authenticated
+  constants:
+    newUserEmail1: ${randEmail()}
+    newUserEmail2: ${randEmail()}
+    newUserPassword: abc
+  description: As a user I want to be able to sign up the system
+  interactions:
+    - description: It shall be able to create an new user account with email and password provided and respond with the new user id.
+      request:
+        post: sign-up
+        json:
+          email: ${newUserEmail1}
+          password: ${newUserPassword}
+    - description: It shall be able to login new user account using the email and password registered
+      request:
+        post: login
+        json:
+          email: ${newUserEmail1}
+          password: ${newUserPassword}
+    - description: If email already exists then it shall respond with 400 Bad Request with message saying the email has already been registered
+      request:
+        post: sign-up
+        json:
+          email: ${newUserEmail1}
+          password: ${randString()}
+      response:
+        status: 400
+        json:
+          message: email already registered
+    - description: If password is blank then it shall respond with 400 Bad Request with message saying the password is invalid.
+      request:
+        post: sign-up
+        json:
+          email: ${newUserEmail2}
+      response:
+        status: 400
+        json:
+          message: password is invalid

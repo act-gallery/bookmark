@@ -1,0 +1,12 @@
+Scenario(3 Add bookmark - unauthorized):
+  partition: non-authenticated
+  urlContext: bookmarks
+  interactions:
+    - description: It shall respond 401 if a guest user (user that not logged in) submit request to add bookmark
+      request:
+        method: post
+        json:
+          url: https://google.com
+          description: The gate of the net
+      response:
+        status: 401

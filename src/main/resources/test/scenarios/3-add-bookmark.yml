@@ -1,0 +1,18 @@
+Scenario(3 Add bookmark):
+  depends:
+    - Login
+  description: As a registered user I want to be able to create my bookmark
+  urlContext: bookmarks
+  interactions:
+    - description: It shall add a bookmark successfully with URL and brief description provided and respond with 201 and new bookmark ID
+      request:
+        method: post
+        json:
+          url: https://google.com
+          description: The gate of the net
+      response:
+        json:
+          id:
+            - exists: true
+      cache:
+        newBookmarkId: id

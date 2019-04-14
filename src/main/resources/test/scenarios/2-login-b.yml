@@ -1,0 +1,10 @@
+Scenario(2 Login B):
+  fixtures:
+    - users.yml
+  description: Login a user B
+  interactions:
+    - request:
+        post: login
+        json:
+          email: b@demo.com
+          password: password

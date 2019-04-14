@@ -1,0 +1,14 @@
+Scenario(3 Add bookmark - invalid data):
+  depends:
+    - Login
+  urlContext: bookmarks
+  interactions:
+    - description: It shall respond 400 with error message "URL expected" when a logged in user submit request to add bookmark without URL provided
+      request:
+        method: post
+        json:
+          description: The gate of the net
+      response:
+        status: 400
+        json:
+          message: URL expected
