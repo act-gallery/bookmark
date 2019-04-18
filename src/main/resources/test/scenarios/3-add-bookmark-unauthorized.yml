@@ -1,4 +1,5 @@
-Scenario(3 Add bookmark - unauthorized):
+Scenario(Add bookmark - unauthorized):
+  issueKey: 3
   partition: non-authenticated
   urlContext: bookmarks
   interactions:

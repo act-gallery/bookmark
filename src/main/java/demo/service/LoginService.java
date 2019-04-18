@@ -3,6 +3,7 @@ package demo.service;
 import act.app.ActionContext;
 import act.util.PropertySpec;
 import demo.models.User;
+import org.osgl.mvc.annotation.Action;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.util.E;
 
@@ -74,5 +75,15 @@ public class LoginService extends PublicServiceBase {
         badRequestIf(null == user, MSG_BAD_EMAIL_PASSWORD);
         badRequestIfNot(user.verifyPassword(password), MSG_BAD_EMAIL_PASSWORD);
         context.login(user);
+    }
+
+    /**
+     * Logout an existing user.
+     *
+     * @param context injected action context used to logout the current session
+     */
+    @Action("logout")
+    public void logout(ActionContext context) {
+        context.logout();
     }
 }

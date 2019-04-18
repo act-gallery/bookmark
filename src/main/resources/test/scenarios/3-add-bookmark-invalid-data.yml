@@ -1,4 +1,5 @@
-Scenario(3 Add bookmark - invalid data):
+Scenario(Add bookmark - invalid data):
+  issueKey: 3
   depends:
     - Login
   urlContext: bookmarks

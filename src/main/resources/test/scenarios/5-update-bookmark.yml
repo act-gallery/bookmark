@@ -1,4 +1,5 @@
-Scenario(5 Update bookmark):
+Scenario(Update bookmark):
+  issueKey: 5
   depends:
     - Add bookmark
   description: As a registered user I want to be able to update my bookmark description
@@ -6,7 +7,8 @@ Scenario(5 Update bookmark):
   interactions:
     - description: It shall return 204 after successfully updated the bookmark description
       request:
-        put: ${newBookmarkId}
+        method: put
+        url: ${newBookmarkId}
         json:
           description: The entry of the net
       response:

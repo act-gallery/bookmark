@@ -35,13 +35,17 @@
     </dependency>
     <dependency>
       <groupId>org.actframework</groupId>
-      <artifactId>act-starter-eclipselink-aaa</artifactId>
+      <artifactId>act-starter-hibernate-aaa</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-eclipselink</artifactId>
-      <version>1.5.8-SNAPSHOT</version>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.actframework</groupId>-->
+<!--      <artifactId>act-eclipselink</artifactId>-->
+<!--      <version>1.5.8-SNAPSHOT</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.actframework</groupId>
       <artifactId>act-jpa-common</artifactId>

@@ -1,5 +1,6 @@
 package demo.service;
 
+import act.app.ActionContext;
 import act.controller.annotation.UrlContext;
 import act.db.DbBind;
 import act.util.PropertySpec;
@@ -111,10 +112,10 @@ public class BookmarkService extends ServiceBase {
      * * It shall respond 401 if a guest user (user not logged in) tried to send request to delete bookmark endpoint
      * * It shall respond 404 if no bookmark found by the ID specified
      * * It shall respond 403 if the bookmark specified by ID is created by a different user
-     *
+     * <p>
      * Refer: [github issue](https://github.com/act-gallery/bookmark/issues/7)
      *
-     * @param bookmark
+     * @param bookmark the URL path variable specifies the bookmark ID
      */
     @DeleteAction("{bookmark}")
     public void delete(@DbBind @NotNull Bookmark bookmark) {

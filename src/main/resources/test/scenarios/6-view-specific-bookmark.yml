@@ -1,4 +1,5 @@
-Scenario(6 View bookmark):
+Scenario(View bookmark):
+  issueKey: 6
   depends:
     - Update bookmark
   description: As a registered user I want to be able to view specific bookmark by ID

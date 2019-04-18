@@ -1,4 +1,5 @@
-Scenario(6 View bookmark - exceptional cases):
+Scenario(View bookmark - exceptional cases):
+  issueKey: 6
   depends:
     - Update bookmark
   urlContext: bookmarks

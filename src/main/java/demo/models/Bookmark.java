@@ -4,6 +4,7 @@ import act.aaa.model.UserLinked;
 import act.apidoc.SampleData;
 import act.apidoc.SampleDataCategory;
 import act.db.jpa.JPADao;
+import act.test.NotFixture;
 import org.osgl.aaa.Principal;
 import org.osgl.util.S;
 
@@ -49,7 +50,7 @@ public class Bookmark implements UserLinked {
             if (S.blank(q)) {
                 return findByOwner(user);
             }
-            return findBy("owner,description", user.email, "%" + q + "%");
+            return findBy("owner,description like ", user.email, "%" + q + "%");
         }
 
     }

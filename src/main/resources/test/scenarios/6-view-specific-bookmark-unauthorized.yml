@@ -1,4 +1,5 @@
-Scenario(6 View bookmark - unauthorized):
+Scenario(View bookmark - unauthorized):
+  issueKey: 6
   partition: non-authenticated
   depends:
     - Update bookmark

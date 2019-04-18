@@ -1,4 +1,5 @@
 Scenario(7 Delete specific bookmark):
+  issueKey: 7
   depends:
     - View bookmark
   description: As a registered user I want to be able to delete my bookmark by ID

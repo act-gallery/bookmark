@@ -1,7 +1,8 @@
-Scenario(2 Login B):
+Scenario(Login B):
+  noIssue: true
   fixtures:
     - users.yml
-  description: Login a user B
+  description: Prepare testing data - login user B
   interactions:
     - request:
         post: login

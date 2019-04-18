@@ -1,4 +1,5 @@
-Scenario(3 Add bookmark):
+Scenario(Add bookmark):
+  issueKey: 3
   depends:
     - Login
   description: As a registered user I want to be able to create my bookmark
@@ -14,5 +15,5 @@ Scenario(3 Add bookmark):
         json:
           id:
             - exists: true
-      cache:
+      assign:
         newBookmarkId: id

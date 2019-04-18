@@ -14,15 +14,15 @@ import javax.persistence.Id;
 @Entity(name = "user")
 public class User extends UserBase {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer id;
+
     public User(String email, char[] password) {
         this.email = S.requireNotBlank(email);
         this.setPassword(password);
         this.grantRoleByNames(AppRole.ROLE_USER);
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
 
     public static class Dao extends JPADao<Integer, User> {
         public boolean exists(String email) {

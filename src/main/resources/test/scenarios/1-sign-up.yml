@@ -1,5 +1,8 @@
-Scenario(1 Sign up):
-  partition: non-authenticated
+Scenario(Sign up):
+  issueKey: 1
+  partition: sign-up
+  depends:
+    - Logout
   constants:
     newUserEmail1: ${randEmail()}
     newUserEmail2: ${randEmail()}

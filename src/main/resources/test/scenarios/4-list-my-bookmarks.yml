@@ -1,4 +1,5 @@
-Scenario(4 List my bookmarks):
+Scenario(List my bookmarks):
+  issueKey: 4
   depends:
     - Add bookmark
   description: As a registered user I want to be able to list all bookmarks created by me

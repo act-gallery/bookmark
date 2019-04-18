@@ -1,4 +1,5 @@
-Scenario(Prepare! Add bookmark for user B):
+Scenario(Add bookmark for user B):
+  noIssue: true
   depends:
     - Login B
   description: Prepare testing data - bookmark for user B
@@ -14,7 +15,7 @@ Scenario(Prepare! Add bookmark for user B):
         json:
           id:
             - exists: true
-      cache:
+      assign:
         bookmarkFacebookId: id
     - description: Add webo
       request:

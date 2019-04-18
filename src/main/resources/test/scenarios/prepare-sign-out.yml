@@ -1,0 +1,9 @@
+Scenario(Logout):
+  partition: non-authenticated
+  setup: true
+  noIssue: true
+  description: Prepare - logout the current session
+  interactions:
+    - description: logout the current session
+      request:
+        get: logout
