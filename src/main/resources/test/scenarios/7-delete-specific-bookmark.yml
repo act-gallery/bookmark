@@ -5,7 +5,7 @@ Scenario(7 Delete specific bookmark):
   description: As a registered user I want to be able to delete my bookmark by ID
   urlContext: bookmarks
   interactions:
-    - description: Logged in user shall be able to view my bookmark by ID
+    - description: Logged in user shall be able to delete bookmark created by him/her by ID
       request:
         delete: ${newBookmarkId}
       response:
