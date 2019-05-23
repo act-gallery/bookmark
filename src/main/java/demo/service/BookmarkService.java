@@ -3,6 +3,7 @@ package demo.service;
 import act.app.ActionContext;
 import act.controller.annotation.UrlContext;
 import act.db.DbBind;
+import act.inject.SessionVariable;
 import act.util.PropertySpec;
 import act.validation.NotBlank;
 import demo.aaa.AppPermission;
