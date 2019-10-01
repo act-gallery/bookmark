@@ -13,6 +13,16 @@ The first time user can load the project into IDE (Intellij IDEA preferred) and 
 
 ![image](https://user-images.githubusercontent.com/216930/56090398-2dc64100-5ee5-11e9-986c-cdbeda0c0f6c.png)
 
+## Start the app
+
+There two ways to start the application
+
+1. Run app in your console
+   ![image](https://user-images.githubusercontent.com/216930/59250455-a8ec6f00-8c6a-11e9-90f9-43d284f28785.png)
+1. Run app in IDE directly
+   ![image](https://user-images.githubusercontent.com/216930/59250580-08e31580-8c6b-11e9-82c6-9f5189b2d572.png)
+
+
 ## View API document
 
 Once the app has been started (in dev mode), the developer can get access to the API document by visiting `~/api`:
