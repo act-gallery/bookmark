@@ -3,7 +3,7 @@ package demo.models;
 
 import act.aaa.model.UserBase;
 import act.db.jpa.JPADao;
-import demo.aaa.AppRole;
+import demo.aaa.AAAHelper;
 import org.osgl.util.S;
 
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class User extends UserBase {
     public User(String email, char[] password) {
         this.email = S.requireNotBlank(email);
         this.setPassword(password);
-        this.grantRoleByNames(AppRole.ROLE_USER);
+        this.grantRoleByNames(AAAHelper.ROLE_USER);
     }
 
     public static class Dao extends JPADao<Integer, User> {

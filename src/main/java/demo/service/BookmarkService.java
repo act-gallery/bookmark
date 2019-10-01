@@ -4,7 +4,7 @@ import act.controller.annotation.UrlContext;
 import act.db.DbBind;
 import act.util.PropertySpec;
 import act.validation.NotBlank;
-import demo.aaa.AppPermission;
+import demo.aaa.AAAHelper;
 import demo.models.Bookmark;
 import org.osgl.aaa.AAA;
 import org.osgl.mvc.annotation.DeleteAction;
@@ -43,7 +43,7 @@ public class BookmarkService extends ServiceBase {
     @PostAction
     @PropertySpec("id")
     public Bookmark create(@Valid Bookmark bookmark) {
-        AAA.requirePermission(AppPermission.PERM_CREATE_BOOKMARK);
+        AAA.requirePermission(AAAHelper.PERM_CREATE_BOOKMARK);
         bookmark.owner = me.email;
         return bookmarkDao.save(bookmark);
     }
@@ -92,7 +92,7 @@ public class BookmarkService extends ServiceBase {
      */
     @PutAction("{bookmark}")
     public void update(@DbBind @NotNull Bookmark bookmark, @NotBlank String description) {
-        AAA.requirePermission(bookmark, AppPermission.PERM_EDIT_MY_BOOKMARK);
+        AAA.requirePermission(bookmark, AAAHelper.PERM_EDIT_MY_BOOKMARK);
         bookmark.description = description;
         bookmarkDao.save(bookmark);
     }
@@ -117,7 +117,7 @@ public class BookmarkService extends ServiceBase {
      */
     @DeleteAction("{bookmark}")
     public void delete(@DbBind @NotNull Bookmark bookmark) {
-        AAA.requirePermission(bookmark, AppPermission.PERM_DROP_MY_BOOKMARK);
+        AAA.requirePermission(bookmark, AAAHelper.PERM_DROP_MY_BOOKMARK);
         bookmarkDao.delete(bookmark);
     }
 

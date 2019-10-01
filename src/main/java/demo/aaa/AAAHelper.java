@@ -17,9 +17,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
-@Entity(name = "perm")
-@NotFixture
-public class AppPermission extends SimplePermission implements SimpleBean {
+/**
+ * Define constants for permissions.
+ *
+ * Note all permissions/roles are defined in resources/acl.yaml file
+ */
+public class AAAHelper {
 
     // static permissions
     public static final String PERM_CREATE_BOOKMARK = "create-bookmark";
@@ -39,17 +42,8 @@ public class AppPermission extends SimplePermission implements SimpleBean {
     // to handle the case: DropCommentToMyBookmarkChecker
     public static final String PERM_DROP_COMMENT_TO_MY_BOOKMARK = "delete-comment-to-my-bookmark";
 
-    final static String[] DYNAMIC_PERMS = {
-          PERM_EDIT_MY_BOOKMARK,
-          PERM_DROP_MY_BOOKMARK,
-          PERM_EDIT_MY_COMMENT,
-          PERM_DROP_MY_COMMENT,
-          PERM_DROP_COMMENT_TO_MY_BOOKMARK
-    };
-
-    final static String[] STATIC_PERMS = {
-            PERM_CREATE_BOOKMARK
-    };
+    // the role - user
+    public static final String ROLE_USER = "user";
 
     /**
      * Responsible to determine if a user A has permission to delete comments to bookmarks of the user.
@@ -65,35 +59,6 @@ public class AppPermission extends SimplePermission implements SimpleBean {
             Bookmark.Dao bookmarkDao = Act.getInstance(Bookmark.Dao.class);
             Bookmark bookmark = bookmarkDao.findById(comment.bookmarkId);
             return null != bookmark && bookmark.isLinkedTo(principal);
-        }
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    public Integer id;
-
-    public AppPermission(String name, boolean dynamic) {
-        super(name, dynamic);
-    }
-
-    public static class Dao extends JPADao<Integer, AppPermission> {
-        public AppPermission findByName(String name) {
-            return findOneBy("name", name);
-        }
-
-        @Override
-        public AppPermission save(AppPermission entity) {
-            return super.save(entity);
-        }
-
-        @Override
-        public void save(AppPermission entity, String fieldList, Object... values) {
-            super.save(entity, fieldList, values);
-        }
-
-        @Override
-        public List<AppPermission> save(Iterable<AppPermission> entities) {
-            return super.save(entities);
         }
     }
 
