@@ -26,6 +26,7 @@ public class AAAHelper {
 
     // static permissions
     public static final String PERM_CREATE_BOOKMARK = "create-bookmark";
+    public static final String PERM_CREATE_COMMENT = "create-comment";
     // the following dynamic permissions are guaranteed
     // by the framework supplied UserLinked.DynamicPermissionChecker.
     // Note both Comment and Bookmark has implemented UserLinked interface

@@ -14,6 +14,10 @@ delete-my-bookmark:
   type: permission
   dynamic: true
 
+create-comment:
+  type: permission
+  dynamic: false
+
 edit-my-comment:
   type: permission
   dynamic: true
@@ -32,6 +36,7 @@ user:
     - create-bookmark
     - edit-my-bookmark
     - delete-my-bookmark
+    - create-comment
     - edit-my-comment
     - delete-my-comment
     - delete-comment-to-my-bookmark
