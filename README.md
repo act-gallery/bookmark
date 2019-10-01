@@ -92,13 +92,13 @@ Whenever a resource needs authorisation protection, the developer can use `AAA.r
 an authorisation requirement to protect the resource, e.g.
 
 ```java
-    @PostAction
-    @PropertySpec("id")
-    public Bookmark create(@Valid Bookmark bookmark) {
-        AAA.requirePermission(AAAHelper.PERM_CREATE_BOOKMARK);
-        bookmark.owner = me.email;
-        return bookmarkDao.save(bookmark);
-    }
+@PostAction
+@PropertySpec("id")
+public Bookmark create(@Valid Bookmark bookmark) {
+    AAA.requirePermission(AAAHelper.PERM_CREATE_BOOKMARK);
+    bookmark.owner = me.email;
+    return bookmarkDao.save(bookmark);
+}
 ```
 
 The above code declare permission `AAAHelper.PERM_CREATE_BOOKMARK` is required to access create bookmark endpoint.
@@ -108,12 +108,12 @@ The above code declare permission `AAAHelper.PERM_CREATE_BOOKMARK` is required t
 It is not unusual that a resource protected by authorisation needs to do further check besides permission check. e.g. 
 
 ```java
-    @PutAction("{bookmark}")
-    public void update(@DbBind @NotNull Bookmark bookmark, @NotBlank String description) {
-        AAA.requirePermission(bookmark, AAAHelper.PERM_EDIT_MY_BOOKMARK);
-        bookmark.description = description;
-        bookmarkDao.save(bookmark);
-    }
+@PutAction("{bookmark}")
+public void update(@DbBind @NotNull Bookmark bookmark, @NotBlank String description) {
+    AAA.requirePermission(bookmark, AAAHelper.PERM_EDIT_MY_BOOKMARK);
+    bookmark.description = description;
+    bookmarkDao.save(bookmark);
+}
 ```
 
 The above code declare permission `PERM_EDIT_MY_BOOKMARK` is required to edit a bookmark, however, it doesn't make 
