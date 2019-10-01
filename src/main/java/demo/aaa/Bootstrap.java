@@ -3,7 +3,6 @@ package demo.aaa;
 import act.app.event.SysEventId;
 import act.job.OnSysEvent;
 import org.osgl.$;
-import org.osgl.util.C;
 
 import javax.inject.Inject;
 import java.util.ArrayList;

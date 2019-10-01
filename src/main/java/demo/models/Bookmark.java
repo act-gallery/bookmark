@@ -2,9 +2,7 @@ package demo.models;
 
 import act.aaa.model.UserLinked;
 import act.apidoc.SampleData;
-import act.apidoc.SampleDataCategory;
 import act.db.jpa.JPADao;
-import act.test.NotFixture;
 import org.osgl.aaa.Principal;
 import org.osgl.util.S;
 

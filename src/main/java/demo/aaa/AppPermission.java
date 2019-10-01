@@ -7,18 +7,15 @@ import act.test.NotFixture;
 import act.util.SimpleBean;
 import demo.models.Bookmark;
 import demo.models.Comment;
-import org.osgl.aaa.Permission;
 import org.osgl.aaa.Principal;
 import org.osgl.aaa.impl.SimplePermission;
 import org.osgl.util.C;
-import org.osgl.util.E;
-import org.osgl.util.S;
 
-import javax.persistence.*;
-import java.util.HashMap;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 @Entity(name = "perm")
 @NotFixture

@@ -1,6 +1,5 @@
 package demo.service;
 
-import act.Act;
 import act.controller.annotation.UrlContext;
 import act.db.DbBind;
 import act.util.PropertySpec;
@@ -8,12 +7,10 @@ import act.validation.NotBlank;
 import demo.aaa.AppPermission;
 import demo.models.Bookmark;
 import org.osgl.aaa.AAA;
-import org.osgl.aaa.NoAuthentication;
 import org.osgl.mvc.annotation.DeleteAction;
 import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.mvc.annotation.PutAction;
-import org.osgl.util.E;
 
 import javax.inject.Inject;
 import javax.validation.Valid;

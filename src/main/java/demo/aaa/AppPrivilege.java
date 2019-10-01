@@ -2,14 +2,12 @@ package demo.aaa;
 
 import act.db.jpa.JPADao;
 import act.util.SimpleBean;
-import org.osgl.aaa.Privilege;
 import org.osgl.aaa.impl.SimplePrivilege;
-import org.osgl.util.S;
 
-import javax.persistence.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity(name = "priv")
 public class AppPrivilege extends SimplePrivilege implements SimpleBean {
