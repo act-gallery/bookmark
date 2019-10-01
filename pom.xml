@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.22.0</version>
+    <version>1.8.28.1</version>
   </parent>
 
   <properties>
@@ -23,6 +23,10 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.actframework</groupId>
+      <artifactId>act</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.actframework</groupId>
       <artifactId>act-aaa</artifactId>

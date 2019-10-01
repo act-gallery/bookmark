@@ -33,7 +33,7 @@ The bookmark project has been created with full automate testing scenarios which
 
 When app has been started in dev mode, the developer can run automate test by going to `~/test`:
 
-![image](https://user-images.githubusercontent.com/216930/56090606-b0e89680-5ee7-11e9-9802-49df2c02a9f8.png)
+![0](https://user-images.githubusercontent.com/216930/65928175-2d444700-e440-11e9-8ebd-06400718f762.gif)
 
 ## Understanding `aaa`
 

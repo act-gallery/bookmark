@@ -6,6 +6,8 @@ Scenario(7 Delete specific bookmark):
   urlContext: bookmarks
   interactions:
     - description: Logged in user shall be able to delete bookmark created by him/her by ID
+      preActions:
+        - pause: 500
       request:
         delete: ${newBookmarkId}
       response:

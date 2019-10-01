@@ -11,7 +11,8 @@ Scenario(Update bookmark - exceptional cases):
           description: ""
       response:
         status: 400
-        message: Description expected
+        message:
+          - contains: must not be blank string
     - description: It shall respond 403 if the bookmark is not created by the current logged in user
       request:
         put: ${bookmarkFacebookId}

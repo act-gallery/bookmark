@@ -5,6 +5,8 @@ Scenario(7 Delete specific bookmark - failure):
   urlContext: bookmarks
   interactions:
     - description: It shall respond 404 if no bookmark found by the ID specified
+      preActions:
+        - pause: 500
       request:
         delete: ${randInt()}
       response:

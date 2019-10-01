@@ -1,19 +1,19 @@
 package demo.service;
 
-import act.app.ActionContext;
+import act.Act;
 import act.controller.annotation.UrlContext;
 import act.db.DbBind;
-import act.inject.SessionVariable;
 import act.util.PropertySpec;
 import act.validation.NotBlank;
 import demo.aaa.AppPermission;
 import demo.models.Bookmark;
 import org.osgl.aaa.AAA;
+import org.osgl.aaa.NoAuthentication;
 import org.osgl.mvc.annotation.DeleteAction;
 import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 import org.osgl.mvc.annotation.PutAction;
-import org.osgl.util.S;
+import org.osgl.util.E;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -40,7 +40,7 @@ public class BookmarkService extends ServiceBase {
      *
      * Refer: [github issue](https://github.com/act-gallery/bookmark/issues/3)
      *
-     * @param bookmark
+     * @param bookmark an new bookmark posted
      * @return ID of the new bookmark
      */
     @PostAction
