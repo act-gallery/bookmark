@@ -142,3 +142,11 @@ public class Bookmark implements UserLinked {
     ...
 }
 ```
+
+## Summary
+
+This demo application shows
+
+* How to add authentication/authorisation to an application
+* How to leverage `/~/api` endpoint for API document generation
+* How to leverage `/~/test` endpoint for test automation  
