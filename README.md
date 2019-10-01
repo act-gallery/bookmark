@@ -134,6 +134,18 @@ public class Bookmark implements UserLinked {
 }
 ```
 
+### About Database
+
+This demo application use [act-hibernate](https://github.com/actframework/act-hibernate) as the database plugin to
+provide database access support.
+
+There is no database configuration provided with the Demo app, ActFramework load the only database plugin introduced 
+by maven dependency. In terms of database, the framework will use built-in h2 database engine to create a file database 
+named `test` in the project folder.
+
+However a `db.properties` file has been provided with a bunch of commonly used database configurations (all commented) 
+for developer's reference.
+
 ## Summary
 
 This demo application shows
