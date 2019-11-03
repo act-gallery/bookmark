@@ -2,19 +2,11 @@ package demo.aaa;
 
 import act.Act;
 import act.aaa.DynamicPermissionCheckHelperBase;
-import act.db.jpa.JPADao;
-import act.test.NotFixture;
-import act.util.SimpleBean;
 import demo.models.Bookmark;
 import demo.models.Comment;
 import org.osgl.aaa.Principal;
-import org.osgl.aaa.impl.SimplePermission;
 import org.osgl.util.C;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.List;
 
 /**
