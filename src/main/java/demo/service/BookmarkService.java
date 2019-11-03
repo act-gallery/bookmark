@@ -12,8 +12,6 @@ import demo.models.User;
 import org.osgl.aaa.AAA;
 import org.osgl.util.E;
 
-import javax.validation.Validator;
-
 @UrlContext("/api/v1/bookmarks")
 public class BookmarkService extends SimpleRestfulServiceBase<Integer, Bookmark, Bookmark.Dao> {
 
