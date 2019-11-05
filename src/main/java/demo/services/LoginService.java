@@ -1,4 +1,4 @@
-package demo.service;
+package demo.services;
 
 import act.app.ActionContext;
 import act.util.PropertySpec;

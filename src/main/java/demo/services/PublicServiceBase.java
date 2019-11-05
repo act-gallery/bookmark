@@ -1,4 +1,4 @@
-package demo.service;
+package demo.services;
 
 import act.controller.Controller;
 import act.controller.annotation.UrlContext;

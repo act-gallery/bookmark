@@ -1,4 +1,4 @@
-package demo.service;
+package demo.services;
 
 import act.aaa.util.AuthenticatedControllerBase;
 import act.controller.annotation.UrlContext;

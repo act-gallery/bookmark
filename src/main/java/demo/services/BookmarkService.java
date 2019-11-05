@@ -1,4 +1,4 @@
-package demo.service;
+package demo.services;
 
 import act.controller.annotation.UrlContext;
 import act.db.DbBind;

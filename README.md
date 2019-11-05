@@ -71,7 +71,7 @@ In order to mark an endpoint as public, i.e. no authentication required, it can 
 the controller class or request handler method, e.g. 
 
 ```java
-package demo.service;
+package demo.services;
 
 import act.controller.Controller;
 import act.controller.annotation.UrlContext;
