@@ -17,8 +17,6 @@
   </parent>
 
   <properties>
-    <!-- remove the following line if you are on Java 7-->
-    <java.version>1.8</java.version>
     <app.entry>demo.AppEntry</app.entry>
   </properties>
 
