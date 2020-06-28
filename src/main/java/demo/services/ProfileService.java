@@ -1,5 +1,6 @@
 package demo.services;
 
+import act.aaa.LoginUser;
 import act.controller.annotation.UrlContext;
 import act.util.PropertySpec;
 import demo.models.User;
@@ -7,6 +8,9 @@ import org.osgl.mvc.annotation.GetAction;
 
 @UrlContext("profiles")
 public class ProfileService extends ServiceBase {
+
+    @LoginUser
+    protected User me;
 
     /**
      * Access login user's profile

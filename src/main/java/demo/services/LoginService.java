@@ -41,10 +41,10 @@ public class LoginService extends PublicServiceBase {
      */
     @PostAction("~signUp~")
     @PropertySpec("id")
-    public User signUp(String email, char[] password) {
+    public User signUp(String email, char[] password, String displayName) {
         E.illegalArgumentIf(password.length == 0, "password is invalid");
         E.illegalArgumentIf(userDao.exists(email), "email already registered");
-        User user = new User(email, password);
+        User user = new User(email, password, displayName);
         return userDao.save(user);
     }
 

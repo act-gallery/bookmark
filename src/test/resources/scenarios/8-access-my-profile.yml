@@ -3,11 +3,10 @@ Scenario(Access my profile):
   depends:
     - Login
   description: As a registered user I want to be able to access my profile
-  urlContext: profiles
   interactions:
     - description: It shall respond with current login user profile when request to the endpoint
       request:
-        get: me
+        get: profiles/me
       response:
         json:
           email: a@demo.com

@@ -1,10 +1,9 @@
 Scenario(8 Access my profile - unauthorized):
   issueKey: 8
   partition: non-authenticated
-  urlContext: profiles
   interactions:
     - description: It shall respond 401 if a guest user (user that not logged in) request the endpoint
       request:
-        get: me
+        get: profiles/me
       response:
         status: 401

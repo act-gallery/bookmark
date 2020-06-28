@@ -14,14 +14,17 @@ import javax.persistence.Id;
 @Entity(name = "user")
 public class User extends UserBase {
 
+    public String displayName;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
 
-    public User(String email, char[] password) {
+    public User(String email, char[] password, String displayName) {
         this.email = S.requireNotBlank(email);
         this.setPassword(password);
         this.grantRoleByNames(AAAHelper.ROLE_USER);
+        this.displayName = displayName;
     }
 
     public static class Dao extends JPADao<Integer, User> {
